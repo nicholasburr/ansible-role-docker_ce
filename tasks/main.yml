@@ -1,0 +1,13 @@
+---
+# https://docs.docker.com/engine/installation/linux/docker-ce/debian/#install-using-the-convenience-script
+- name: install docker ce v{{ docker_ce_version }}
+  environment:
+    APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE: 1
+  script: "get-docker.sh {{ docker_ce_version }}"
+  args:
+    creates: /usr/bin/docker
+
+- name: pin docker ce v{{ docker_ce_version }}
+  template:
+    src: docker.j2
+    dest: /etc/apt/preferences.d/docker

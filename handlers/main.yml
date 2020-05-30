@@ -1,2 +1,7 @@
 ---
-# handlers file for docker_ce
+- name: restart_docker
+  systemctl:
+    daemon_reload: true
+    name: docker
+    enabled: true
+    state: restarted

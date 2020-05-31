@@ -30,5 +30,5 @@
 - name: create systemd service
   file:
     path: /etc/systemd/system/docker.service.d
-    state: directoy
+    state: directory 
   notify: restart_docker

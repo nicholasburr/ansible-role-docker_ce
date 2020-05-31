@@ -1,6 +1,6 @@
 ---
 - name: restart_docker
-  systemctl:
+  systemd:
     daemon_reload: true
     name: docker
     enabled: true

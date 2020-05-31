@@ -32,3 +32,5 @@
     path: /etc/systemd/system/docker.service.d
     state: directory 
   notify: restart_docker
+
+- meta: flush_handlers
